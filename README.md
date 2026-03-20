@@ -1,97 +1,119 @@
-# 🚀 ProjectMind AI
+# 🤖 AI Auto Project Generator (Agentic AI)
 
-### 🤖 AI Auto Project Generator
+An AI-powered tool that generates complete academic project blueprints for MCA / Engineering students. Powered by **local LLMs** via Ollama — **no paid APIs required**.
 
-⚡ Powered by ProjectMind AI · Built with ❤️ using Streamlit + Gemini
+Enter your domain, skill level, preferred technologies, and complexity, and the AI agents will produce a structured blueprint covering:
 
----
-
-## 📌 Overview
-
-ProjectMind AI is an AI-powered web application that generates complete academic project blueprints instantly. It helps students create structured project ideas including title,
-abstract, methodology, tech stack, and more.
-
----
-
-## ✨ Features
-
-* 🧠 AI-generated project blueprints
-* ⚡ Fast responses using Google Gemini API
-* 📊 Tech stack recommendations
-* 📝 Viva questions generator
-* 📅 Project timeline generation
-* 💻 Starter code suggestions
-* 📄 Export to PDF, DOCX, and PPT
-* 🎯 Clean and user-friendly UI
+1. Project Title  
+2. Problem Statement  
+3. Why This Project Is Useful  
+4. Real-World Applications  
+5. Technology Stack  
+6. Dataset Suggestions  
+7. System Architecture  
+8. Step-by-Step Implementation  
+9. Folder Structure  
+10. Future Enhancements  
+11. Resume Description  
 
 ---
 
-## 🧠 Tech Stack
+## 📁 Project Structure
 
-* Python
-* Streamlit
-* LangChain
-* Google Gemini API
-* FPDF2 / python-docx / python-pptx
-
----
-
-## ⚙️ How to Run Locally
-
-1. Clone the repository
-
-```bash
-git clone https://github.com/your-username/projectmind-ai.git
-cd projectmind-ai
+```
+project_generator/
+├── app.py              # Streamlit UI
+├── agent.py            # Agentic LLM pipeline (Planner → Generator → Parser)
+├── generator.py        # Prompt templates & output parsing
+├── styles.css          # Custom CSS for modern UI
+├── requirements.txt    # Python dependencies
+└── README.md           # This file
 ```
 
-2. Install dependencies
+---
+
+## 🚀 Installation & Setup
+
+### 1. Prerequisites
+
+| Tool | Version | Install |
+|------|---------|---------|
+| Python | 3.10+ | [python.org](https://python.org) |
+| Ollama | latest | [ollama.com](https://ollama.com) |
+
+### 2. Install Ollama & Pull a Model
 
 ```bash
+# Install Ollama (follow instructions at https://ollama.com)
+# Then pull a model:
+ollama pull llama3
+# (or)
+ollama pull mistral
+```
+
+### 3. Start Ollama
+
+```bash
+ollama serve
+```
+
+> Keep this terminal open — the app needs Ollama running in the background.
+
+### 4. Clone & Install Dependencies
+
+```bash
+cd project_generator
 pip install -r requirements.txt
 ```
 
-3. Add API Key
-   Create a `.env` file and add:
-
-```
-GOOGLE_API_KEY=your_api_key_here
-```
-
-4. Run the app
+### 5. Run the App
 
 ```bash
 streamlit run app.py
 ```
 
----
-
-## 🔐 Important Notes
-
-* Do not expose your API key publicly
-* `.env` file should not be uploaded to GitHub
-* For deployment, use Streamlit Secrets
+The app will open in your browser at `http://localhost:8501`.
 
 ---
 
-## 🌐 Deployment
+## 🎨 Features
 
-This project can be deployed on Streamlit Community Cloud for free.
-
----
-
-## 💡 About
-
-ProjectMind AI is designed to simplify academic project creation by providing structured, AI-generated content quickly and efficiently.
-
----
-
-## 👨‍💻 Author
-
-Developed by **Your Name**
+- **Agentic AI Pipeline** — Planner Agent → Generator Agent → Output Formatter
+- **Beautiful Modern UI** — Glassmorphic cards, gradient background, smooth animations
+- **PDF Export** — Download your project blueprint as a PDF
+- **Copy Buttons** — Easily copy individual sections
+- **Example Prompts** — One-click example configurations for quick demos
+- **100 % Local** — No data leaves your machine. No API keys needed.
 
 ---
 
-## ⭐ Support
+## ☁️ Deployment (Streamlit Community Cloud)
 
-If you like this project, give it a ⭐ on GitHub!
+> **Note:** Cloud deployment requires an Ollama-compatible endpoint. For a fully local experience, run on your own machine.
+
+1. Push this folder to a **public GitHub repository**.
+2. Go to [share.streamlit.io](https://share.streamlit.io).
+3. Click **New app** → select your repo, branch, and `app.py`.
+4. Add any required secrets/environment variables for your Ollama endpoint.
+5. Click **Deploy**.
+
+For local-only usage, simply run `streamlit run app.py`.
+
+---
+
+## 🛠️ Tech Stack
+
+| Layer | Technology |
+|-------|-----------|
+| Language | Python 3.10+ |
+| UI Framework | Streamlit |
+| LLM Runtime | Ollama (local) |
+| LLM Models | Llama 3 / Mistral |
+| Agent Framework | LangChain |
+| PDF Export | fpdf2 |
+
+---
+
+## 📄 License
+
+This project is open-source and free to use for academic purposes.
