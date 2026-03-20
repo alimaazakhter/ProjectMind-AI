@@ -1,20 +1,55 @@
-# 🤖 AI Auto Project Generator (Agentic AI)
+# 🚀 ProjectMind AI
 
-An AI-powered tool that generates complete academic project blueprints for MCA / Engineering students. Powered by **local LLMs** via Ollama — **no paid APIs required**.
+### 🤖 AI Auto Project Generator (Agentic AI)
 
-Enter your domain, skill level, preferred technologies, and complexity, and the AI agents will produce a structured blueprint covering:
+An AI-powered tool that generates complete academic project blueprints for MCA / Engineering students.
 
-1. Project Title  
-2. Problem Statement  
-3. Why This Project Is Useful  
-4. Real-World Applications  
-5. Technology Stack  
-6. Dataset Suggestions  
-7. System Architecture  
-8. Step-by-Step Implementation  
-9. Folder Structure  
-10. Future Enhancements  
-11. Resume Description  
+Originally designed to run fully on **local LLMs using Ollama (100% offline, no paid APIs)**, the system was later enhanced with **Google Gemini API support** to enable fast and scalable cloud deployment.
+
+---
+
+## 🧠 How It Works
+
+This project follows an **Agentic AI pipeline**:
+
+* 🧩 **Planner Agent** → Breaks down user input
+* ⚙️ **Generator Agent** → Creates structured content
+* 📝 **Formatter/Parser** → Cleans and organizes output
+
+---
+
+## ⚡ Dual Mode Support (Key Highlight)
+
+This project supports **two modes of operation**:
+
+### 🟢 1. Local Mode (Ollama)
+
+* Runs fully on your system
+* No internet required
+* No API key needed
+* Uses models like Llama3 / Mistral
+
+### ☁️ 2. Cloud Mode (Gemini API)
+
+* Fast responses
+* No local setup required
+* Easily deployable on Streamlit Cloud
+* Uses Google Gemini models
+
+> 🔥 This hybrid design ensures both **privacy (local AI)** and **scalability (cloud AI)**.
+
+---
+
+## ✨ Features
+
+* 🧠 Generate full project blueprints
+* ⚡ AI-powered structured output
+* 📊 Tech stack & dataset suggestions
+* 📝 Viva questions generator
+* 📅 Project timeline generation
+* 💻 Starter code suggestions
+* 📄 Export to PDF, DOCX, PPT
+* 🎯 Clean modern UI
 
 ---
 
@@ -22,98 +57,91 @@ Enter your domain, skill level, preferred technologies, and complexity, and the 
 
 ```
 project_generator/
-├── app.py              # Streamlit UI
-├── agent.py            # Agentic LLM pipeline (Planner → Generator → Parser)
-├── generator.py        # Prompt templates & output parsing
-├── styles.css          # Custom CSS for modern UI
-├── requirements.txt    # Python dependencies
-└── README.md           # This file
+├── app.py
+├── agent.py
+├── generator.py
+├── styles.css
+├── requirements.txt
+└── README.md
 ```
 
 ---
 
-## 🚀 Installation & Setup
+## 🚀 Installation & Setup (Local - Ollama Mode)
 
-### 1. Prerequisites
-
-| Tool | Version | Install |
-|------|---------|---------|
-| Python | 3.10+ | [python.org](https://python.org) |
-| Ollama | latest | [ollama.com](https://ollama.com) |
-
-### 2. Install Ollama & Pull a Model
+### 1. Install Ollama
 
 ```bash
-# Install Ollama (follow instructions at https://ollama.com)
-# Then pull a model:
 ollama pull llama3
-# (or)
+# or
 ollama pull mistral
 ```
 
-### 3. Start Ollama
+### 2. Start Ollama
 
 ```bash
 ollama serve
 ```
 
-> Keep this terminal open — the app needs Ollama running in the background.
-
-### 4. Clone & Install Dependencies
+### 3. Install Dependencies
 
 ```bash
-cd project_generator
 pip install -r requirements.txt
 ```
 
-### 5. Run the App
+### 4. Run App
 
 ```bash
 streamlit run app.py
 ```
 
-The app will open in your browser at `http://localhost:8501`.
-
 ---
 
-## 🎨 Features
+## ☁️ Cloud Setup (Gemini Mode)
 
-- **Agentic AI Pipeline** — Planner Agent → Generator Agent → Output Formatter
-- **Beautiful Modern UI** — Glassmorphic cards, gradient background, smooth animations
-- **PDF Export** — Download your project blueprint as a PDF
-- **Copy Buttons** — Easily copy individual sections
-- **Example Prompts** — One-click example configurations for quick demos
-- **100 % Local** — No data leaves your machine. No API keys needed.
+1. Get a free API key from Google AI Studio
+2. Add in Streamlit Secrets:
 
----
+```
+GOOGLE_API_KEY="your_api_key"
+```
 
-## ☁️ Deployment (Streamlit Community Cloud)
-
-> **Note:** Cloud deployment requires an Ollama-compatible endpoint. For a fully local experience, run on your own machine.
-
-1. Push this folder to a **public GitHub repository**.
-2. Go to [share.streamlit.io](https://share.streamlit.io).
-3. Click **New app** → select your repo, branch, and `app.py`.
-4. Add any required secrets/environment variables for your Ollama endpoint.
-5. Click **Deploy**.
-
-For local-only usage, simply run `streamlit run app.py`.
+3. Deploy on Streamlit Cloud
 
 ---
 
 ## 🛠️ Tech Stack
 
-| Layer | Technology |
-|-------|-----------|
-| Language | Python 3.10+ |
-| UI Framework | Streamlit |
-| LLM Runtime | Ollama (local) |
-| LLM Models | Llama 3 / Mistral |
-| Agent Framework | LangChain |
-| PDF Export | fpdf2 |
+* Python
+* Streamlit
+* LangChain
+* Ollama (Local LLMs)
+* Google Gemini API
+* FPDF / python-docx / python-pptx
 
 ---
 
-## 📄 License
+## 💡 Why Both Ollama and Gemini?
 
-This project is open-source and free to use for academic purposes.
+* Ollama → **Privacy + Offline capability**
+* Gemini → **Speed + Deployment support**
+
+This combination makes the system flexible for both **local development** and **real-world usage**.
+
+---
+
+## 🌐 Deployment
+
+Deployed on Streamlit Community Cloud using Gemini API for cloud inference.
+
+---
+
+## 👨‍💻 Author
+
+Developed by **Alimaaz Akhter**
+
+---
+
+## ⭐ Support
+
+If you like this project, give it a ⭐ on GitHub!
